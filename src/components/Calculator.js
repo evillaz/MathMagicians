@@ -1,25 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import NumberInput from './numberInput';
-
-const ButtonList = ({ items }) => (
-  <div className="calculatorButtons">
-    {items.map((item) => (
-      <button type="button" id={`button${item}`} key={item} className="button">{item}</button>
-    ))}
-  </div>
-);
-
-ButtonList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+import calculate from '../logic/calculate';
 
 const Calculator = () => {
+  const [state, setState] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
+
+  function handleClick(buttonName) {
+    const newState = calculate(state, buttonName.buttonText);
+    setState(newState);
+  }
+
+  const CalculatorButton = ({ buttonText }) => (
+    <button onClick={() => handleClick({ buttonText })} type="button" id={`button${buttonText}`} key={buttonText} className="button">{buttonText}</button>
+  );
+
+  CalculatorButton.propTypes = {
+    buttonText: PropTypes.string.isRequired,
+  };
+
   const items = ['AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
+
   return (
     <div className="calculator">
-      <NumberInput />
-      <ButtonList items={items} />
+      <p className="numberInput">{state.next || state.total || '0'}</p>
+      <div className="calculatorButtons">
+        {items.map((item) => (
+          <CalculatorButton key={item} buttonText={item} />
+        ))}
+      </div>
     </div>
   );
 };
