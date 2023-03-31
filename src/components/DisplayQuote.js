@@ -32,7 +32,7 @@ const DisplayQuote = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <Quote quote={data.quote} author={data.author}/>
+    <Quote quote={data.quote} author={data.author} />
   );
 };
 
