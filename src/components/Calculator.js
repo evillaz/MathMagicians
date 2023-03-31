@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import calculate from '../logic/calculate';
+import CalculatorButton from './calculatorButton';
 
 const Calculator = () => {
   const [state, setState] = useState({
@@ -14,14 +14,6 @@ const Calculator = () => {
     setState(newState);
   }
 
-  const CalculatorButton = ({ buttonText }) => (
-    <button onClick={() => handleClick({ buttonText })} type="button" id={`button${buttonText}`} key={buttonText} className="button">{buttonText}</button>
-  );
-
-  CalculatorButton.propTypes = {
-    buttonText: PropTypes.string.isRequired,
-  };
-
   const items = ['AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
 
   return (
@@ -29,7 +21,7 @@ const Calculator = () => {
       <p className="numberInput">{state.next || state.total || '0'}</p>
       <div className="calculatorButtons">
         {items.map((item) => (
-          <CalculatorButton key={item} buttonText={item} />
+          <CalculatorButton key={item} buttonText={item} buttonFunction={handleClick} />
         ))}
       </div>
     </div>
