@@ -1,15 +1,18 @@
 import PropTypes from 'prop-types';
+import styles from '../styles/Quote.module.css';
 
 const Quote = ({ quote, author }) => (
-  <div className="quote">
-    {quote}
-    <span className="author">
+  <>
+    <span className={styles.quote}>
+      {quote}
+    </span>
+    <span className={styles.author}>
       <br />
       &quot;
       {author}
       &quot;
     </span>
-  </div>
+  </>
 );
 
 Quote.defaultProps = {

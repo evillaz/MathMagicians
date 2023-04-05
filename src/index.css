@@ -25,3 +25,14 @@ code {
     'Courier New',
     monospace;
 }
+
+a.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
