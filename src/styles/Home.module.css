@@ -1,0 +1,10 @@
+.homeWrapper,
+.paragraphContainer {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.homeWrapper {
+  padding: 2rem;
+}

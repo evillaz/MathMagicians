@@ -36,3 +36,12 @@ a.active {
   flex-direction: column;
   height: 100vh;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 20px;
+  padding: 0 1rem 10rem;
+  height: 100%;
+}
