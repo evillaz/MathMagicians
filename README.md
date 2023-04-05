@@ -90,6 +90,8 @@ After you're finished please remove all the comments and instructions!
 
 - **[Understand and use React.]**
 - **[Set up the environment and tools needed to develop a React application. .]**
+- **[Use React Router.]**
+- **[Use styles in a React app.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
