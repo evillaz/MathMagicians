@@ -24,8 +24,7 @@
     "import/no-unresolved": "off",
     "no-shadow": "off",
     "react/jsx-no-bind": "off",
-    "max-len": "off",
-    "import/extensions": "off"
+    "max-len": "off"
   },
   "ignorePatterns": ["dist/", "build/","src/logic/"]
 }
