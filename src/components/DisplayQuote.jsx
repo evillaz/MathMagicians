@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Quote from './Quote';
+import Quote from './Quote.jsx';
 
 const DisplayQuote = () => {
   const [data, setData] = useState([]);
