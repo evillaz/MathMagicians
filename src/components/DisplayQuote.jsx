@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Quote from './Quote.jsx';
+import QuoteAuthor from './QuoteAuthor';
 
 const DisplayQuote = () => {
   const [data, setData] = useState([]);
@@ -32,7 +32,7 @@ const DisplayQuote = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <Quote quote={data.quote} author={data.author} />
+    <QuoteAuthor quote={data.quote} author={data.author} />
   );
 };
 
